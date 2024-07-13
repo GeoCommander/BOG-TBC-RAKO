@@ -7,16 +7,18 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 40px;
+            margin: 20px;
             background-color: #f4f4f9;
         }
         h1 {
             color: #333;
             text-align: center;
+            margin-bottom: 20px;
         }
         p {
             text-align: center;
             font-size: 18px;
+            margin-bottom: 30px;
         }
         .container {
             max-width: 600px;
@@ -29,8 +31,9 @@
         .bank-details {
             margin-bottom: 20px;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
+            text-align: center;
             padding: 10px;
             border-bottom: 1px solid #ddd;
         }
@@ -38,17 +41,17 @@
             border-bottom: none;
         }
         .bank-details h2 {
-            margin: 0;
+            margin: 10px 0;
             font-size: 18px;
             color: #555;
         }
         .bank-details p {
-            margin: 0;
+            margin: 10px 0;
             font-weight: bold;
             font-size: 16px;
         }
         .bank-details button {
-            padding: 5px 15px;
+            padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
             background: #007bff;
@@ -58,6 +61,24 @@
         }
         .bank-details button:hover {
             background: #0056b3;
+        }
+
+        @media (min-width: 600px) {
+            .bank-details {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                text-align: left;
+            }
+            .bank-details h2, .bank-details p, .bank-details button {
+                margin: 0;
+            }
+            .bank-details h2 {
+                font-size: 20px;
+            }
+            .bank-details p {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
