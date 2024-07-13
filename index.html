@@ -7,26 +7,57 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 40px;
+            background-color: #f4f4f9;
         }
         h1 {
             color: #333;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+            font-size: 18px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .bank-details {
             margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .bank-details:last-child {
+            border-bottom: none;
         }
         .bank-details h2 {
-            display: inline;
+            margin: 0;
+            font-size: 18px;
+            color: #555;
         }
         .bank-details p {
-            display: inline;
+            margin: 0;
             font-weight: bold;
-            margin-right: 10px;
+            font-size: 16px;
         }
         .bank-details button {
-            padding: 5px 10px;
+            padding: 5px 15px;
             font-size: 16px;
             cursor: pointer;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        .bank-details button:hover {
+            background: #0056b3;
         }
     </style>
 </head>
@@ -34,16 +65,18 @@
     <h1>ბანკის ანგარიშების დეტალები</h1>
     <p>ქვევით მიაკლიკეთ ბანკის დეტალების დასაკოპირებლად.</p>
 
-    <div class="bank-details">
-        <h2>საქართველოს ბანკი: </h2>
-        <p id="bankData1">GE06BG0000000355227700</p>
-        <button id="copyButton1" onclick="copyToClipboard('bankData1')">კოპირება</button>
-    </div>
+    <div class="container">
+        <div class="bank-details">
+            <h2>საქართველოს ბანკი:</h2>
+            <p id="bankData1">GE06BG0000000355227700</p>
+            <button id="copyButton1" onclick="copyToClipboard('bankData1')">კოპირება</button>
+        </div>
 
-    <div class="bank-details">
-        <h2>TBC ბანკი: </h2>
-        <p id="bankData2">GE36TB7708036020100004</p>
-        <button id="copyButton2" onclick="copyToClipboard('bankData2')">კოპირება</button>
+        <div class="bank-details">
+            <h2>TBC ბანკი:</h2>
+            <p id="bankData2">GE36TB7708036020100004</p>
+            <button id="copyButton2" onclick="copyToClipboard('bankData2')">კოპირება</button>
+        </div>
     </div>
 
     <script>
