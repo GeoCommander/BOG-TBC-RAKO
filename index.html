@@ -4,24 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ბანკის ანგარიშების დეტალები</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .bank-details {
+            margin-bottom: 20px;
+        }
+        .bank-details h2 {
+            display: inline;
+        }
+        .bank-details p {
+            display: inline;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .bank-details button {
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <h1>ბანკის ანგარიშების დეტალები</h1>
     <p>ქვევით მიაკლიკეთ ბანკის დეტალების დასაკოპირებლად.</p>
 
-    <h2>საქართველოს ბანკი</h2>
-    <button id="copyButton1" onclick="copyToClipboard('bankData1')">კოპირება</button>
-    <p id="bankData1" style="display: none;">GE06BG0000000355227700</p>
+    <div class="bank-details">
+        <h2>საქართველოს ბანკი: </h2>
+        <p id="bankData1">GE06BG0000000355227700</p>
+        <button id="copyButton1" onclick="copyToClipboard('bankData1')">კოპირება</button>
+    </div>
 
-    <h2>TBC ბანკი</h2>
-    <button id="copyButton2" onclick="copyToClipboard('bankData2')">კოპირება</button>
-    <p id="bankData2" style="display: none;">GE36TB7708036020100004</p>
+    <div class="bank-details">
+        <h2>TBC ბანკი: </h2>
+        <p id="bankData2">GE36TB7708036020100004</p>
+        <button id="copyButton2" onclick="copyToClipboard('bankData2')">კოპირება</button>
+    </div>
 
     <script>
     function copyToClipboard(elementId) {
         var copyText = document.getElementById(elementId).innerText;
         navigator.clipboard.writeText(copyText).then(function() {
-            alert("Bank details copied to clipboard!");
+            alert("ბანკის დეტალები დაკოპირდა!");
         }, function(err) {
             console.error("Could not copy text: ", err);
         });
